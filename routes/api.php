@@ -5,7 +5,7 @@ use App\Http\Controllers\api\LighthouseController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-
+//google login routes
 Route::prefix('auth')->group(function () {
     Route::get('/google/redirect', [AuthController::class, 'redirectToGoogle']);
     Route::get('/google/callback', [AuthController::class, 'handleGoogleCallback']);
