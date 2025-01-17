@@ -24,11 +24,13 @@ class AuthController extends Controller
             [
                 'name' => $googleUser->getName(),
                 'google_id' => $googleUser->getId(),
+//                'password' => bcrypt(str_random(16)), // Set a random password
             ]
         );
 
         $token = $user->createToken('API Token')->plainTextToken;
 
-        return response()->json(['token' => $token], 200);
+        return redirect('http://localhost:5173/dashboard?token=' . $token);
     }
+
 }
