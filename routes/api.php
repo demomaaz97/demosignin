@@ -13,6 +13,7 @@ Route::prefix('auth')->group(function () {
 
 Route::post('/test-lighthouse', [LighthouseController::class, 'testPerformance']);
 
+
 // Protected Routes
 Route::middleware('auth:sanctum')->group(function () {
 });
